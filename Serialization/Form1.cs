@@ -52,11 +52,11 @@ namespace Serialization
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("You need to select the type of serialization!");
+                MessageBox.Show(@"You need to select the type of serialization!");
             }
             catch
             {
-                MessageBox.Show("Something was wrong");
+                MessageBox.Show(@"Something was wrong");
             }
         }
 
@@ -103,11 +103,11 @@ namespace Serialization
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("You need to select the type of deserialization!");
+                MessageBox.Show(@"You need to select the type of deserialization!");
             }
             catch
             {
-                MessageBox.Show("Something was wrong");
+                MessageBox.Show(@"Something was wrong");
             }
         }
     }
@@ -217,7 +217,7 @@ namespace Serialization
             {
                 var currentDir = dirs.Pop();
                 listForFileInform.Add(new Inform(currentDir));
-                var subDirs = Array.Empty<DirectoryInfo>();
+                DirectoryInfo[] subDirs;
                 try
                 {
                     subDirs = currentDir.GetDirectories();
@@ -227,11 +227,11 @@ namespace Serialization
                 }
                 catch (UnauthorizedAccessException)
                 {
-                    MessageBox.Show("You don't have discovery permossion on a folder or file");
+                    MessageBox.Show(@"You don't have discovery permission on a folder or file");
                 }
                 catch
                 {
-                    MessageBox.Show("Sonething was wrong. I will definitely make it");
+                    MessageBox.Show(@"Something was wrong. I will definitely make it");
                 }
             }
             return listForFileInform;
